@@ -1,0 +1,17 @@
+<div ng-controller="SimpleController">
+    <h3> Looping over names</h3>
+
+    <ul>
+        <li ng-repeat="personName in names">{{ personName.name }}  - {{ personName.city}} </li>
+    </ul>
+
+
+    <ul>
+        <li ng-repeat="personName in names | orderBy: 'name' | filter:nameText">{{ personName.name }}  - {{ personName.city}} </li>
+    </ul>
+
+    <input type="text" ng-model="newName.name"/>
+    <input type="text" ng-model="newName.city">
+    <button ng-click="addName()">Add Name</button>
+
+</div>
